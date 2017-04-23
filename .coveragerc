@@ -1,0 +1,7 @@
+[run]
+branch = True
+data_file = .coverage
+source=quote_of_the_day
+omit =
+    *static*
+    *translations*
