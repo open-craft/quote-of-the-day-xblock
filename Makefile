@@ -26,6 +26,7 @@ dev.update:
 	pip install -q pip-tools
 	pip-compile --upgrade -o requirements/base.txt requirements/base.in
 	pip-compile --upgrade -o requirements/dev.txt requirements/dev.in
+	pip-compile --upgrade -o requirements/test.txt requirements/test.in
 
 dev.requirements:
-	pip-sync requirements/base.txt requirements/dev.txt requirements/private.*
+	pip-sync requirements/base.txt requirements/dev.txt requirements/private.* requirements/test.txt
