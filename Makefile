@@ -10,6 +10,7 @@ help:
 	@echo "  dev.run                    run the XBlock in the XBlock workbench"
 	@echo "  dev.update                 compile dependency files"
 	@echo "  dev.requirements           setup dependencies"
+	@echo "  dev.quality                run code quality analysis"
 	@echo ""
 
 dev.clean:
@@ -27,6 +28,11 @@ dev.update:
 	pip-compile --upgrade -o requirements/base.txt requirements/base.in
 	pip-compile --upgrade -o requirements/dev.txt requirements/dev.in
 	pip-compile --upgrade -o requirements/test.txt requirements/test.in
+	pip-compile --upgrade -o requirements/quality.txt requirements/quality.in
 
 dev.requirements:
-	pip-sync requirements/base.txt requirements/dev.txt requirements/private.* requirements/test.txt
+	pip-sync requirements/base.txt requirements/dev.txt requirements/private.* requirements/test.txt requirements/quality.txt
+
+dev.quality:
+	tox -e quality
+
