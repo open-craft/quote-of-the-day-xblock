@@ -1,4 +1,4 @@
-FROM xblock-sdk
+FROM jbarciauskas/xblock-sdk
 RUN mkdir -p /usr/local/src/xblock-quote-of-the-day
 VOLUME ["/usr/local/src/xblock-quote-of-the-day"]
 RUN echo "pip install -e /usr/local/src/xblock-quote-of-the-day" >> /usr/local/src/xblock-sdk/install_and_run_xblock.sh
