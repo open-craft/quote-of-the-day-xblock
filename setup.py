@@ -29,7 +29,7 @@ setup(
         'quote_of_the_day',
     ],
     install_requires=[
-        'XBlock',
+        'XBlock', 'requests'
     ],
     entry_points={
         'xblock.v1': [
