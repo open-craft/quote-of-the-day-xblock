@@ -1,22 +1,23 @@
 /* Javascript for QuoteOfTheDayXBlock. */
 function QuoteOfTheDayXBlock(runtime, element) {
 
-    function updateCount(result) {
-        $('.count', element).text(result.count);
-    }
+    var handlerUrl = runtime.handlerUrl(element, 'save_to_favorites');
 
-    var handlerUrl = runtime.handlerUrl(element, 'increment_count');
-
-    $('p', element).click(function(eventObject) {
+    $('.star', element).click(function(ev) {
+        var $quoteWrapper = $(this).parent();
+        var quoteAuthor = $quoteWrapper.find(".author").text();
+        var quoteText = $quoteWrapper.find(".text").text();
         $.ajax({
             type: "POST",
             url: handlerUrl,
-            data: JSON.stringify({"hello": "world"}),
-            success: updateCount
+            data: JSON.stringify({"author": quoteAuthor, "text": quoteText}),
+            success: function(data) {
+                if (data.success) {
+                    alert(data.message);
+                    window.location = window.location;
+                }
+                else { alert(data.message); }
+            }
         });
-    });
-
-    $(function ($) {
-        /* Here's where you'd do things on page load. */
     });
 }
