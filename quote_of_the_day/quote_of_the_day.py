@@ -38,6 +38,12 @@ class QuoteOfTheDayXBlock(XBlock):
         frag.initialize_js('QuoteOfTheDayXBlock')
         return frag
 
+    def studio_view(self, context=None):
+        """
+        View for editing QuoteOfTheDayXBlock in Studio.
+        """
+        return Fragment(u'<p>This block is missing some settings. Add them by changing this view!</p>')
+
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.
     @XBlock.json_handler
