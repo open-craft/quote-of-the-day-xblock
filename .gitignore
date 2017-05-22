@@ -58,3 +58,6 @@ ENV/
 
 # IDE
 .idea
+
+# Project stuff
+requirements/private.*
