@@ -12,6 +12,7 @@ markupsafe==1.0           # via xblock
 python-dateutil==2.6.0    # via xblock
 pytz==2017.2              # via fs, xblock
 pyyaml==3.12              # via xblock
+requests==2.13.0
 scandir==1.5              # via fs
 six==1.10.0               # via fs, python-dateutil, xblock
 web-fragments==0.2.1      # via xblock
