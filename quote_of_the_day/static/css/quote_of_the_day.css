@@ -1,9 +1,8 @@
 /* CSS for QuoteOfTheDayXBlock */
-
-.quote_of_the_day_block .count {
+.quote_of_the_day_block .author {
     font-weight: bold;
 }
 
-.quote_of_the_day_block p {
+.quote-of-the-day_block p {
     cursor: pointer;
 }

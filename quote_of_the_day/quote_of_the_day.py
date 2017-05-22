@@ -5,6 +5,7 @@ from xblock.core import XBlock
 from xblock.fields import Integer, Scope
 from xblock.fragment import Fragment
 
+from read_quote import read_quote
 
 class QuoteOfTheDayXBlock(XBlock):
     """
@@ -32,7 +33,9 @@ class QuoteOfTheDayXBlock(XBlock):
         when viewing courses.
         """
         html = self.resource_string("static/html/quote_of_the_day.html")
-        frag = Fragment(html.format(self=self))
+        quote, author = read_quote()
+        context = {"quote": quote, "author": author}
+        frag = Fragment(html.format(self=self, **context))
         frag.add_css(self.resource_string("static/css/quote_of_the_day.css"))
         frag.add_javascript(self.resource_string("static/js/src/quote_of_the_day.js"))
         frag.initialize_js('QuoteOfTheDayXBlock')
