@@ -31,7 +31,7 @@ dev.update:
 	pip-compile --upgrade -o requirements/quality.txt requirements/quality.in
 
 dev.requirements:
-	pip-sync requirements/base.txt requirements/dev.txt requirements/private.* requirements/test.txt requirements/quality.txt
+	pip-sync requirements/base.txt requirements/dev.txt requirements/test.txt requirements/quality.txt
 
 dev.quality:
 	tox -e quality
