@@ -1,5 +1,7 @@
 README for Quote of the day XBlock
 
+As of 2021, **this XBlock is unmaintained**. It may still work but we haven't tested it.
+
 Testing with Docker
 -------------------
 
